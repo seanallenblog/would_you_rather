@@ -18,7 +18,7 @@ class Dashboard extends Component {
               {
                 unansweredIds.map((id) => (
                   <li key={id}>
-                    <Question id={id} />
+                    <Question answered={false} id={id} />
                   </li>
                 ))
               }
@@ -29,7 +29,7 @@ class Dashboard extends Component {
               {
                 answeredIds.map((id) => (
                   <li key={id}>
-                    <Question id={id} />
+                    <Question answered={true} id={id} />
                   </li>
                 ))
               }

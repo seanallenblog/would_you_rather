@@ -19,6 +19,29 @@ input[type="radio"] {
   margin: 0 auto;
 }
 
+.q-results {
+  margin-bottom: 1.5rem;
+  background: rgb(220, 255, 238);
+  padding: 1.75rem;
+  border: 1px solid lightgreen;
+  border-radius: 5px;
+
+}
+
+.q-results p {
+  color: green;
+}
+
+.progress {
+  height: 2.5rem !important;
+}
+
+p.out-of-votes {
+  margin-top: 5px;
+  text-align: center;
+  color: black;
+}
+
 .container {
   max-width: 1000px;
   margin: 0 auto;
