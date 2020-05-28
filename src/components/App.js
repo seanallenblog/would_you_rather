@@ -5,11 +5,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { handleInitialData } from '../actions/shared';
 import Nav from './Nav';
 import Dashboard from './Dashboard';
+import QuestionDetails from './QuestionDetails';
 
 
 class App extends Component {
   componentDidMount () {
-    this.props.dispatch(handleInitialData())
+    this.props.dispatch(handleInitialData());
   }
 
 
@@ -25,6 +26,7 @@ class App extends Component {
                 ? null
                 : <div>
                   <Route path='/' exact component={Dashboard} />
+                  <Route path='/questions/:id' component={QuestionDetails} />
                 </div>
             }
           </div>
@@ -36,7 +38,7 @@ class App extends Component {
 
 function mapStateToProps ({ authedUser }) {
   return {
-    loading: authedUser === null
+    loading: authedUser === null,
   }
 }
 

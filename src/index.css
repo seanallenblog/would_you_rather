@@ -10,6 +10,15 @@ a {
   color: #252525;
 }
 
+input[type="radio"] {
+  margin-right: .5rem;
+}
+
+.card {
+  width: 50%;
+  margin: 0 auto;
+}
+
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -72,4 +81,24 @@ li {
   height: 50px;
   border-radius: 25px;
   margin: 10px;
+}
+
+.question-info-container {
+  display: flex;
+}
+
+.avatar-img-container {
+  padding: 1rem;
+}
+
+.avatar-img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 5px double #f5c322;
+}
+
+.question-details {
+  padding: 1rem;
+  width: 100%;
 }
