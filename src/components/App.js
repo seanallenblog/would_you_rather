@@ -6,6 +6,7 @@ import { handleInitialData } from '../actions/shared';
 import Nav from './Nav';
 import Dashboard from './Dashboard';
 import QuestionDetails from './QuestionDetails';
+import AddQuestion from './AddQuestion';
 
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
                 : <div>
                   <Route path='/' exact component={Dashboard} />
                   <Route path='/questions/:id' component={QuestionDetails} />
+                  <Route path='/add' component={AddQuestion} />
                 </div>
             }
           </div>

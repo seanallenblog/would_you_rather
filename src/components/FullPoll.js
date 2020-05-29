@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { handleAnswerQuestion } from '../actions/questions';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
 

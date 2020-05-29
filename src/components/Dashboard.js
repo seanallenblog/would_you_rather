@@ -14,7 +14,7 @@ class Dashboard extends Component {
       <div>
         <Tabs defaultActiveKey="unanswered" id="uncontrolled-tab-example">
           <Tab eventKey="unanswered" title="Unanswered">
-            <ul>
+            <ul className='cards'>
               {
                 unansweredIds.map((id) => (
                   <li key={id}>
@@ -25,7 +25,7 @@ class Dashboard extends Component {
             </ul>
           </Tab>
           <Tab eventKey="answered" title="Answered">
-            <ul>
+            <ul className='cards'>
               {
                 answeredIds.map((id) => (
                   <li key={id}>
@@ -43,7 +43,8 @@ class Dashboard extends Component {
 }
 
 function mapStateToProps ({ questions, authedUser }) {
-  const questionIds = Object.keys(questions);
+  const questionIds = Object.keys(questions)
+    .sort((a, b) => questions[b].timestamp - questions[a].timestamp);
 
   const answeredIds = questionIds.filter((id) => {
     return questions[id].optionOne.votes.includes('dezmara') ||
