@@ -36,10 +36,16 @@ class FullPoll extends Component {
   }
 
   render () {
-    const { question, answered } = this.props;
+    const { question, answered, authedUser } = this.props;
     const { selectedOption } = this.state;
 
-    let optionOneVotes, optionTwoVotes, totalVotes, optionOnePercent, optionTwoPercent;
+    let optionOneVotes,
+      optionTwoVotes,
+      totalVotes,
+      optionOnePercent,
+      optionTwoPercent,
+      userChoseOne,
+      userChoseTwo;
 
     if (answered) {
       console.log(question);
@@ -48,6 +54,8 @@ class FullPoll extends Component {
       totalVotes = optionOneVotes + optionTwoVotes;
       optionOnePercent = Math.round((optionOneVotes / totalVotes) * 100);
       optionTwoPercent = Math.round((optionTwoVotes / totalVotes) * 100);
+      userChoseOne = question.optionOne.votes.includes(authedUser);
+      userChoseTwo = question.optionTwo.votes.includes(authedUser);
     }
 
     console.log(this.state);
@@ -93,6 +101,9 @@ class FullPoll extends Component {
           <Fragment>
             <h3>Results:</h3>
             <div className='q-results'>
+              <div className={userChoseOne ? 'user-choice-badge show' : 'user-choice-badge hide'}>
+                Your Choice!
+              </div>
               <p>
                 Would you rather {question.optionOne.text}?
               </p>
@@ -104,6 +115,9 @@ class FullPoll extends Component {
               <p className='out-of-votes'>{optionOneVotes} out of {totalVotes} votes</p>
             </div>
             <div className='q-results'>
+              <div className={userChoseTwo ? 'user-choice-badge show' : 'user-choice-badge hide'}>
+                Your Choice!
+              </div>
               <p>
                 Would you rather {question.optionTwo.text}?
               </p>

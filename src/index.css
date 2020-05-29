@@ -3,6 +3,7 @@ body {
   padding: 0;
   font-family: sans-serif;
   color: #252525;
+  box-sizing: border-box;
 }
 
 a {
@@ -17,15 +18,36 @@ input[type="radio"] {
 .card {
   width: 50%;
   margin: 0 auto;
+  min-width: 480px !important;
 }
 
 .q-results {
+  position: relative;
   margin-bottom: 1.5rem;
   background: rgb(220, 255, 238);
   padding: 1.75rem;
   border: 1px solid lightgreen;
   border-radius: 5px;
+}
 
+.user-choice-badge.show {
+  padding-top: 5px;
+  transform: rotate(20deg);
+  position: absolute;
+  top: -2rem;
+  right: -1.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 2px dotted goldenrod;
+  background: palegoldenrod;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.user-choice-badge.hide {
+  display: none;
 }
 
 .q-results p {
