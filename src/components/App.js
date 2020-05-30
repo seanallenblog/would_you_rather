@@ -7,6 +7,7 @@ import Nav from './Nav';
 import Dashboard from './Dashboard';
 import QuestionDetails from './QuestionDetails';
 import AddQuestion from './AddQuestion';
+import LeaderBoard from './LeaderBoard';
 
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
                 ? null
                 : <div>
                   <Route path='/' exact component={Dashboard} />
+                  <Route path='/leaderboard' component={LeaderBoard} />
                   <Route path='/questions/:id' component={QuestionDetails} />
                   <Route path='/add' component={AddQuestion} />
                 </div>

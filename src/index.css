@@ -25,6 +25,111 @@ label {
   min-width: 480px !important;
 }
 
+
+/* Leader board ====== */
+.card-body.leader-board {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.leader-board .avatar-img-container {
+  padding: 0;
+  width: 30%;
+}
+
+.leader-board .avatar-img {
+  margin-right: 0;
+  margin-left: 0;
+  width: 90%;
+}
+
+.user-stats-tile {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.user-score-tile {
+  width: 20%;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+p.score {
+  background: dodgerblue;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+p.rank {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 75px;
+  color: #fff;
+  font-weight: bold;
+}
+
+p.rank span {
+  position: absolute;
+  top: .75rem;
+  left: .5rem;
+  display: block;
+  transform: rotate(-45deg);
+}
+
+p.rank.one {
+  background: linear-gradient(
+    to top left,
+    transparent 0%,
+    transparent 50%,
+    dodgerblue 50%,
+    dodgerblue 100%
+    );
+}
+
+p.rank.one span::after {
+  content: 'st'
+}
+
+p.rank.two {
+  background: linear-gradient(
+    to top left,
+    transparent 0%,
+    transparent 50%,
+    rgb(223, 43, 43) 50%,
+    rgb(223, 43, 43) 100%
+    );
+}
+
+p.rank.two span::after {
+  content: 'nd'
+}
+
+p.rank.three {
+  background: linear-gradient(
+    to top left,
+    transparent 0%,
+    transparent 50%,
+    green 50%,
+    green 100%
+    );
+}
+
+p.rank.three span::after {
+  content: 'rd'
+}
+
 .q-results {
   position: relative;
   margin-bottom: 1.5rem;
@@ -197,7 +302,7 @@ li {
   display: block;
   margin: 0 auto;
   border-radius: 50%;
-  border: 5px double #f5c322;
+  /* border: 5px double #f5c322; */
 }
 
 .question-details {
