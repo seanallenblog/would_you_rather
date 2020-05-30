@@ -240,6 +240,10 @@ input[type="text"] {
   position: relative;
 }
 
+.btn-primary:dsabled {
+  cursor: not-allowed;
+}
+
 .btn:hover {
   border-color: rgba(0,0,0,.5);
   text-decoration: none;

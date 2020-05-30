@@ -89,7 +89,7 @@ class FullPoll extends Component {
                 {question.optionTwo.text}?
             </label>
               <div>
-                <Button type='submit'>Submit</Button>
+                <Button disabled={selectedOption === null} type='submit'>Submit</Button>
               </div>
             </form>
           </Fragment>

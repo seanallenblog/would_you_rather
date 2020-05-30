@@ -21,7 +21,7 @@ class PollPreview extends Component {
         <p>
           {question.optionOne.text} or...
             </p>
-        <Button variant='warning' onClick={(e) => this.viewPoll(e, qid)}>View Poll</Button>
+        <Button variant='success' onClick={(e) => this.viewPoll(e, qid)}>View Poll</Button>
 
       </div>
     );
