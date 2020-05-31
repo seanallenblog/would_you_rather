@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Avatar from './Avatar';
 import FullPoll from './FullPoll';
@@ -8,8 +9,11 @@ import FullPoll from './FullPoll';
 class QuestionDetails extends Component {
 
   render () {
-    console.log(this.props);
     const { question, user } = this.props;
+
+    if (!question) {
+      return <Redirect to='/404' />
+    }
 
     return (
       <Card>
@@ -26,7 +30,8 @@ class QuestionDetails extends Component {
 function mapStateToProps ({ questions, users }, props) {
   const { id } = props.match.params;
   const question = questions[id];
-  const user = users[question.author];
+
+  const user = question ? users[question.author] : null;
 
   return {
     question,

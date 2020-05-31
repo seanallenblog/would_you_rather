@@ -5,6 +5,8 @@ export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
 export const ADD_QUESTION = 'ADD_QUESTION';
 export const SAVE_QUESTION = 'SAVE_QUESTION';
 export const SAVE_ANSWER = 'SAVE_ANSWER';
+export const SAVE_USER_ANSWER = 'SAVE_USER_ANSWER';
+export const SAVE_USER_QUESTION = 'SAVE_USER_QUESTION';
 
 export function saveAnswer (answer, authedUser, qid) {
   return {
@@ -22,6 +24,23 @@ export function addQuestion (question) {
   }
 }
 
+export function saveUserAnswer (answer, authedUser, qid) {
+  return {
+    type: SAVE_USER_ANSWER,
+    answer,
+    authedUser,
+    qid
+  }
+}
+
+export function saveUserQuestion (authedUser, qid) {
+  return {
+    type: SAVE_USER_QUESTION,
+    authedUser,
+    qid
+  }
+}
+
 export function handleSaveQuestion (optionOneText, optionTwoText, author) {
   return (dispatch) => {
     dispatch(showLoading());
@@ -31,6 +50,7 @@ export function handleSaveQuestion (optionOneText, optionTwoText, author) {
       author
     })
       .then((question) => dispatch(addQuestion(question)))
+      .then((resp) => dispatch(saveUserQuestion(author, resp.question.id)))
       .then(() => dispatch(hideLoading()))
   }
 }
@@ -52,6 +72,7 @@ export function handleAnswerQuestion (answer, qid) {
       answer
     })
       .then(() => dispatch(saveAnswer(answer, authedUser, qid)))
+      .then(() => dispatch(saveUserAnswer(answer, authedUser, qid)))
       .then(() => dispatch(hideLoading()))
   }
 }

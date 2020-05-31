@@ -4,8 +4,6 @@ import { Redirect } from 'react-router-dom';
 import { handleLogout } from '../actions/authedUser';
 import Button from 'react-bootstrap/Button';
 
-import Avatar from './Avatar';
-
 class AuthedUserControls extends Component {
 
   state = {
