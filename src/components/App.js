@@ -8,6 +8,7 @@ import Dashboard from './Dashboard';
 import QuestionDetails from './QuestionDetails';
 import AddQuestion from './AddQuestion';
 import LeaderBoard from './LeaderBoard';
+import Login from './Login';
 
 
 class App extends Component {
@@ -25,7 +26,7 @@ class App extends Component {
             <Nav />
             {
               this.props.loading
-                ? null
+                ? <Login />
                 : <div>
                   <Route path='/' exact component={Dashboard} />
                   <Route path='/leaderboard' component={LeaderBoard} />
