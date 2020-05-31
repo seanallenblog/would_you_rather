@@ -33,6 +33,21 @@ label {
   min-width: 480px !important;
 }
 
+/* Logout controls ==== */
+.avatar-img-sm {
+  width: 30%;
+  border-radius: 50%;
+}
+
+.logout-btn {
+  width: 75px !important;
+  margin: 0 !important;
+}
+
+.sm-avatar-container {
+  text-align: right;
+}
+
 
 /* Leader board ====== */
 .card-body.leader-board {
@@ -272,11 +287,16 @@ input[type="text"] {
   font-weight: bold;
 }
 
+.nav.main {
+  justify-content: space-around;
+}
+
 .nav ul {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   text-decoration: none;
+  align-items: baseline;
 }
 
 .nav li:first-child {

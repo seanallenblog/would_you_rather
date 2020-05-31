@@ -8,9 +8,10 @@ export function setAuthedUser (id) {
   }
 }
 
-export function logoutUser () {
+export function logoutUser (id) {
   return {
     type: LOGOUT_USER,
+    id
   }
 }
 
@@ -20,8 +21,8 @@ export function handleLogin (id) {
   }
 }
 
-export function handleLogout () {
+export function handleLogout (id) {
   return (dispatch) => {
-    return dispatch(logoutUser());
+    return dispatch(logoutUser(id));
   }
 }
